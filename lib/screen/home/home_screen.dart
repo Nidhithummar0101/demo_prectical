@@ -1,17 +1,22 @@
+import 'package:demo_assigment/res/color_res.dart';
+import 'package:demo_assigment/screen/home/home_controller.dart';
+import 'package:demo_assigment/screen/home/home_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Container(
-            height: 200,
-            width: 200,
-            child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS--fICKVxvPhW_Ii929EBOdjrZHrdMmsSKHg&s')),
+    Get.put(HomeController());
+    return Scaffold(
+     appBar: appBarTitle(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            text(),
+          ],
         ),
       ),
     );
